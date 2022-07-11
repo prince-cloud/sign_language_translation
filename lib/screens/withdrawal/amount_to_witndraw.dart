@@ -1,56 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:sign_language_detection/components/card.dart';
 import 'package:sign_language_detection/components/keyboard.dart';
-import 'package:sign_language_detection/screens/transactions.dart';
-import 'package:sign_language_detection/screens/withdrawal/account_name.dart';
-import 'package:sign_language_detection/screens/withdrawal/choose_account.dart';
-import 'package:sign_language_detection/screens/withdrawal/withdrawal.dart';
+import 'package:sign_language_detection/screens/withdrawal/summary.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class AmountToWithDraw extends StatefulWidget {
+  final String accountType;
+  final String accountNumber;
+  final String accountName;
+  const AmountToWithDraw({
+    Key? key,
+    required this.accountType,
+    required this.accountNumber,
+    required this.accountName,
+  }) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<AmountToWithDraw> createState() => _AmountToWithDrawState();
 }
 
-class _HomePageState extends State<HomePage> {
-  XFile? imageXFile;
-  final ImagePicker _picker = ImagePicker();
-
-  Future<void> _getImage() async {
-    imageXFile = await _picker.pickImage(source: ImageSource.camera);
-    setState(
-      () {
-        imageXFile;
-      },
-    );
-  }
-
-  TextEditingController accountNumberController = TextEditingController();
-
+class _AmountToWithDrawState extends State<AmountToWithDraw> {
+  TextEditingController amountController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFf1f5ff),
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+      ),
       body: ListView(
         children: [
           Center(
             child: Image.asset("assets/images/conversation.png"),
           ),
-          const SizedBox(
-            height: 15,
-          ),
-          const Center(
-            child: Text(
-              "Enter Account Number below",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.black54,
-              ),
-            ),
-          ),
           ListTile(
+            leading: const Text("GHc"),
             title: TextFormField(
               keyboardType: TextInputType.multiline,
               minLines: 1,
@@ -58,18 +39,17 @@ class _HomePageState extends State<HomePage> {
               //enabled: false,
               showCursor: true,
               readOnly: true,
-              controller: accountNumberController,
+              controller: amountController,
             ),
             trailing: InkWell(
               onTap: () {
-                accountNumberController.text =
-                    accountNumberController.text.substring(
+                amountController.text = amountController.text.substring(
                   0,
-                  accountNumberController.text.length - 1,
+                  amountController.text.length - 1,
                 );
               },
               onLongPress: () {
-                accountNumberController.text = "";
+                amountController.text = "";
               },
               child: const Icon(
                 Icons.arrow_back,
@@ -85,65 +65,68 @@ class _HomePageState extends State<HomePage> {
                 KeyNumeric(
                   keyNumber: "1",
                   ontap: () {
-                    accountNumberController.text += "1";
+                    amountController.text += "1";
                   },
                 ),
                 KeyNumeric(
                   keyNumber: "2",
                   ontap: () {
-                    accountNumberController.text += "2";
+                    amountController.text += "2";
                   },
                 ),
                 KeyNumeric(
                   keyNumber: "3",
                   ontap: () {
-                    accountNumberController.text += "3";
+                    amountController.text += "3";
                   },
                 ),
                 KeyNumeric(
                   keyNumber: "4",
                   ontap: () {
-                    accountNumberController.text += "4";
+                    amountController.text += "4";
                   },
                 ),
                 KeyNumeric(
                   keyNumber: "5",
                   ontap: () {
-                    accountNumberController.text += "5";
+                    amountController.text += "5";
                   },
                 ),
                 KeyNumeric(
                   keyNumber: "6",
                   ontap: () {
-                    accountNumberController.text += "6";
+                    amountController.text += "6";
                   },
                 ),
                 KeyNumeric(
                   keyNumber: "7",
                   ontap: () {
-                    accountNumberController.text += "7";
+                    amountController.text += "7";
                   },
                 ),
                 KeyNumeric(
                   keyNumber: "8",
                   ontap: () {
-                    accountNumberController.text += "8";
+                    amountController.text += "8";
                   },
                 ),
                 KeyNumeric(
                   keyNumber: "9",
                   ontap: () {
-                    accountNumberController.text += "9";
+                    amountController.text += "9";
                   },
                 ),
                 KeyNumeric(
                   keyNumber: "0",
                   ontap: () {
-                    accountNumberController.text += "0";
+                    amountController.text += "0";
                   },
                 ),
               ],
             ),
+          ),
+          const SizedBox(
+            height: 20,
           ),
           Container(
             padding: const EdgeInsets.symmetric(
@@ -155,8 +138,11 @@ class _HomePageState extends State<HomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => AccountName(
-                      accountNumber: accountNumberController.text,
+                    builder: (context) => WithdrawalSummary(
+                      accountType: widget.accountType,
+                      accountNumber: widget.accountNumber,
+                      accountName: widget.accountName,
+                      amount: amountController.text,
                     ),
                   ),
                 );
