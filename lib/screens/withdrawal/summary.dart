@@ -23,6 +23,7 @@ class _WithdrawalSummaryState extends State<WithdrawalSummary> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFf1f5ff),
       appBar: AppBar(
         backgroundColor: Colors.black,
       ),
@@ -33,6 +34,9 @@ class _WithdrawalSummaryState extends State<WithdrawalSummary> {
           children: [
             Center(
               child: Image.asset("assets/images/conversation.png"),
+            ),
+            const SizedBox(
+              height: 20,
             ),
             const Text(
               "Withdrawal Summary",
@@ -70,6 +74,9 @@ class _WithdrawalSummaryState extends State<WithdrawalSummary> {
                           color: Colors.black54,
                         ),
                       ),
+                      const SizedBox(
+                        height: 10,
+                      ),
                       Text(
                         "Account: ${widget.accountType}",
                         style: const TextStyle(
@@ -77,12 +84,18 @@ class _WithdrawalSummaryState extends State<WithdrawalSummary> {
                           color: Colors.black54,
                         ),
                       ),
+                      const SizedBox(
+                        height: 10,
+                      ),
                       Text(
                         "Amount: GHc ${widget.amount}",
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.black54,
                         ),
+                      ),
+                      const SizedBox(
+                        height: 10,
                       ),
                     ],
                   ),

@@ -17,11 +17,27 @@ class _TransactionsState extends State<Transactions> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFf1f5ff),
       appBar: AppBar(
         backgroundColor: Colors.black,
       ),
       body: ListView(
         children: [
+          const SizedBox(
+            height: 10,
+          ),
+          const Center(
+            child: Text(
+              "Select Transaction Type",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.black54,
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
           Center(
             child: Image.asset("assets/images/conversation.png"),
           ),

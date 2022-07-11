@@ -15,6 +15,7 @@ class _AccountNameState extends State<AccountName> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFf1f5ff),
       appBar: AppBar(
         backgroundColor: Colors.black,
       ),
@@ -22,6 +23,18 @@ class _AccountNameState extends State<AccountName> {
         children: [
           Center(
             child: Image.asset("assets/images/conversation.png"),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          const Center(
+            child: Text(
+              "Enter Account Name below",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.black54,
+              ),
+            ),
           ),
           ListTile(
             title: TextFormField(
