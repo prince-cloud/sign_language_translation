@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:sign_language_detection/components/card.dart';
-import 'package:sign_language_detection/screens/withdrawal/choose_account.dart';
-import 'package:sign_language_detection/screens/withdrawal/withdrawal.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

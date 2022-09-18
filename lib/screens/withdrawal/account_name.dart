@@ -24,6 +24,15 @@ class _AccountNameState extends State<AccountName> {
           Center(
             child: Image.asset("assets/images/conversation.png"),
           ),
+          /* BetterPlayer.network(
+              widget.product.video,
+              betterPlayerConfiguration: BetterPlayerConfiguration(
+                aspectRatio: 16 / 9,
+                looping: false,
+                autoPlay: false,
+                fit: BoxFit.contain,
+              ),
+            ), */
           const SizedBox(
             height: 15,
           ),

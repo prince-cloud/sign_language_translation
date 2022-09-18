@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sign_language_detection/screens/dictionary.dart';
-import 'package:sign_language_detection/screens/homepage.dart';
+import 'package:sign_language_detection/screens/splash_screen.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -11,7 +11,7 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   List pages = [
-    const HomePage(),
+    const SplashScreen(),
     const Dictionary(),
   ];
 
@@ -33,7 +33,7 @@ class _MainPageState extends State<MainPage> {
         backgroundColor: Colors.black,
         title: const Center(
           child: Text(
-            "Sign Language Dectection",
+            "Bank Services",
             style: TextStyle(
               fontWeight: FontWeight.bold,
               color: Colors.white,

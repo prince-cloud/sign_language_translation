@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sign_language_detection/screens/main_page.dart';
-import 'package:sign_language_detection/screens/withdrawal/account_name.dart';
 
 class WithdrawalSummary extends StatefulWidget {
   final String accountType;

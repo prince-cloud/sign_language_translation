@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sign_language_detection/components/card.dart';
+import 'package:sign_language_detection/screens/deposit/choose_type.dart';
+import 'package:sign_language_detection/screens/deposit/deposite_amount.dart';
 import 'package:sign_language_detection/screens/withdrawal/choose_account.dart';
 
 class Transactions extends StatefulWidget {
@@ -58,9 +60,25 @@ class _TransactionsState extends State<Transactions> {
           Center(
             child: Image.asset("assets/images/conversation.png"),
           ),
-          CustomCard(text: "Deposit"),
+          CustomCard(
+            text: "Deposit",
+            ontap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ChooseDepositType(
+                    accountNumber: widget.accountNumber,
+                    accountName: widget.accountName,
+                  ),
+                ),
+              );
+            },
+          ),
+          Center(
+            child: Image.asset("assets/images/conversation.png"),
+          ),
+          CustomCard(text: "Transfer Money"),
           CustomCard(text: "Bank Statement"),
-          CustomCard(text: "Payments"),
         ],
       ),
     );
