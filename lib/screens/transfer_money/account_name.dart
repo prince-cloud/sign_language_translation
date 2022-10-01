@@ -28,7 +28,7 @@ class _TransferAccountNameState extends State<TransferAccountName> {
         children: [
           Center(
             child: Image.asset(
-              "assets/images/account_name.gif",
+              "assets/images/receipient_account_name.gif",
               height: 300,
             ),
           ),

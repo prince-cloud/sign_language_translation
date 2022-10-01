@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:sign_language_detection/live_translation.dart';
 import 'package:sign_language_detection/screens/homepage.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -10,18 +11,6 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  XFile? imageXFile;
-  final ImagePicker _picker = ImagePicker();
-
-  Future<void> _getImage() async {
-    imageXFile = await _picker.pickImage(source: ImageSource.camera);
-    setState(
-      () {
-        imageXFile;
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -127,18 +116,11 @@ class _SplashScreenState extends State<SplashScreen> {
                     ),
                     InkWell(
                       onTap: () {
-                        _getImage().then(
-                          (value) => {
-                            if (imageXFile != null)
-                              {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const HomePage(),
-                                  ),
-                                )
-                              }
-                          },
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const LiveTranslation(),
+                          ),
                         );
                       },
                       child: Container(

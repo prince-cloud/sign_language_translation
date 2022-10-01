@@ -36,7 +36,7 @@ class _AccountNumberState extends State<AccountNumber> {
           ),
           Center(
             child: Image.asset(
-              "assets/images/account_number.gif",
+              "assets/images/receipient_account_number.gif",
               height: 300,
             ),
           ),

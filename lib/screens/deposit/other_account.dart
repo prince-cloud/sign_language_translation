@@ -34,7 +34,7 @@ class _OtherAccountState extends State<OtherAccount> {
           ),
           Center(
             child: Image.asset(
-              "assets/images/account_number.gif",
+              "assets/images/receipient_account_number.gif",
               height: 300,
             ),
           ),

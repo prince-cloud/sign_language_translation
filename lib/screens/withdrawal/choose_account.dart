@@ -39,7 +39,10 @@ class _ChooseAccountState extends State<ChooseAccount> {
             height: 15,
           ),
           Center(
-            child: Image.asset("assets/images/conversation.png"),
+            child: Image.asset(
+              "assets/images/savings_account.gif",
+              height: 300,
+            ),
           ),
           CustomCard(
             text: "Savings",
@@ -57,7 +60,10 @@ class _ChooseAccountState extends State<ChooseAccount> {
             },
           ),
           Center(
-            child: Image.asset("assets/images/conversation.png"),
+            child: Image.asset(
+              "assets/images/current_account.gif",
+              height: 300,
+            ),
           ),
           CustomCard(
             text: "Current",

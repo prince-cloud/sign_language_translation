@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sign_language_detection/screens/main_page.dart';
-import 'package:sign_language_detection/screens/splash_screen.dart';
-import 'package:sign_language_detection/screens/transactions.dart';
 
 class BankStatementSummary extends StatefulWidget {
   final String startDate;

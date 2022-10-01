@@ -22,7 +22,7 @@ class _TransferBankNameState extends State<TransferBankName> {
         children: [
           Center(
             child: Image.asset(
-              "assets/images/account_name.gif",
+              "assets/images/name_of_bank.gif",
               height: 300,
             ),
           ),
