@@ -32,7 +32,10 @@ class _AmountToWithDrawState extends State<AmountToWithDraw> {
             height: 10,
           ),
           Center(
-            child: Image.asset("assets/images/conversation.png"),
+            child: Image.asset(
+              "assets/images/enter_amount.gif",
+              height: 300,
+            ),
           ),
           const SizedBox(
             height: 15,

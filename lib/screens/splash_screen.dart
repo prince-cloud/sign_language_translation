@@ -79,7 +79,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     ),
                   ],
                 ), */
-                Row(
+                /* Row(
                   children: const [
                     Icon(
                       Icons.text_format,
@@ -101,7 +101,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       ),
                     ),
                   ],
-                ),
+                ), */
                 const SizedBox(
                   height: 20,
                 ),

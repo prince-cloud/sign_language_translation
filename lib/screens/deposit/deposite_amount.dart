@@ -38,7 +38,10 @@ class _DepositAmountState extends State<DepositAmount> {
             height: 15,
           ),
           Center(
-            child: Image.asset("assets/images/conversation.png"),
+            child: Image.asset(
+              "assets/images/enter_amount.gif",
+              height: 300,
+            ),
           ),
           const Center(
             child: Text(

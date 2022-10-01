@@ -53,7 +53,10 @@ class _HomePageState extends State<HomePage> {
       body: ListView(
         children: [
           Center(
-            child: Image.asset("assets/images/account_number.gif"),
+            child: Image.asset(
+              "assets/images/account_number.gif",
+              height: 300,
+            ),
           ),
           const Center(
             child: Text(

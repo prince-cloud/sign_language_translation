@@ -33,7 +33,10 @@ class _OtherAccountState extends State<OtherAccount> {
             height: 15,
           ),
           Center(
-            child: Image.asset("assets/images/conversation.png"),
+            child: Image.asset(
+              "assets/images/account_number.gif",
+              height: 300,
+            ),
           ),
           const Center(
             child: Text(

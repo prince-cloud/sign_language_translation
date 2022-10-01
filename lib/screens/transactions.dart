@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sign_language_detection/components/card.dart';
+import 'package:sign_language_detection/screens/bank_statement/start_date.dart';
 import 'package:sign_language_detection/screens/deposit/choose_type.dart';
 import 'package:sign_language_detection/screens/deposit/deposite_amount.dart';
+import 'package:sign_language_detection/screens/transfer_money/choose_type.dart';
 import 'package:sign_language_detection/screens/withdrawal/choose_account.dart';
 
 class Transactions extends StatefulWidget {
@@ -77,8 +79,34 @@ class _TransactionsState extends State<Transactions> {
           Center(
             child: Image.asset("assets/images/conversation.png"),
           ),
-          CustomCard(text: "Transfer Money"),
-          CustomCard(text: "Bank Statement"),
+          CustomCard(
+            text: "Transfer Money",
+            ontap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ChooseTransferMoneyType(
+                    accountNumber: widget.accountNumber,
+                    accountName: widget.accountName,
+                  ),
+                ),
+              );
+            },
+          ),
+          Center(
+            child: Image.asset("assets/images/conversation.png"),
+          ),
+          CustomCard(
+            text: "Bank Statement",
+            ontap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const StartDate(),
+                ),
+              );
+            },
+          ),
         ],
       ),
     );

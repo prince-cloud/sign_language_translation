@@ -26,7 +26,10 @@ class _OtherAccountNameState extends State<OtherAccountName> {
       body: ListView(
         children: [
           Center(
-            child: Image.asset("assets/images/conversation.png"),
+            child: Image.asset(
+              "assets/images/account_name.gif",
+              height: 300,
+            ),
           ),
           const Center(
             child: Text(

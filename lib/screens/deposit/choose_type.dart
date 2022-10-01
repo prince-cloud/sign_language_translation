@@ -39,7 +39,10 @@ class _ChooseDepositTypeState extends State<ChooseDepositType> {
             height: 15,
           ),
           Center(
-            child: Image.asset("assets/images/conversation.png"),
+            child: Image.asset(
+              "assets/images/same_account.gif",
+              height: 300,
+            ),
           ),
           CustomCard(
             text: "Self",
@@ -58,7 +61,10 @@ class _ChooseDepositTypeState extends State<ChooseDepositType> {
             },
           ),
           Center(
-            child: Image.asset("assets/images/conversation.png"),
+            child: Image.asset(
+              "assets/images/other_account.gif",
+              height: 300,
+            ),
           ),
           CustomCard(
             text: "Other Account",

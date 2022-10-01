@@ -33,7 +33,7 @@ class _MainPageState extends State<MainPage> {
         backgroundColor: Colors.black,
         title: const Center(
           child: Text(
-            "Bank Services",
+            "Sign Language Recognition; The BankGuy",
             style: TextStyle(
               fontWeight: FontWeight.bold,
               color: Colors.white,
