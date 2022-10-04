@@ -43,7 +43,10 @@ class _TransactionsState extends State<Transactions> {
             height: 10,
           ),
           Center(
-            child: Image.asset("assets/images/conversation.png"),
+            child: Image.asset(
+              "assets/images/name_of_bank.gif",
+              height: 200,
+            ),
           ),
           CustomCard(
             text: "Withdrawal",
@@ -60,7 +63,10 @@ class _TransactionsState extends State<Transactions> {
             },
           ),
           Center(
-            child: Image.asset("assets/images/conversation.png"),
+            child: Image.asset(
+              "assets/images/deposit.gif",
+              height: 200,
+            ),
           ),
           CustomCard(
             text: "Deposit",
@@ -77,7 +83,10 @@ class _TransactionsState extends State<Transactions> {
             },
           ),
           Center(
-            child: Image.asset("assets/images/conversation.png"),
+            child: Image.asset(
+              "assets/images/transfer_money.gif",
+              height: 200,
+            ),
           ),
           CustomCard(
             text: "Transfer Money",
@@ -94,7 +103,10 @@ class _TransactionsState extends State<Transactions> {
             },
           ),
           Center(
-            child: Image.asset("assets/images/conversation.png"),
+            child: Image.asset(
+              "assets/images/other_account.gif",
+              height: 200,
+            ),
           ),
           CustomCard(
             text: "Bank Statement",

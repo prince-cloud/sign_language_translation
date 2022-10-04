@@ -1,6 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:sign_language_detection/live_translation.dart';
+import 'package:sign_language_detection/screens/live_translation.dart';
 import 'package:sign_language_detection/screens/homepage.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -11,6 +13,16 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  XFile? imageXFile;
+  final ImagePicker _picker = ImagePicker();
+  Future<void> _getImage() async {
+    final ImagePicker _picker = ImagePicker();
+    final XFile? pickedFile = await _picker.pickImage(
+      source: ImageSource.camera,
+    );
+    File image = File(pickedFile!.path);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -116,12 +128,29 @@ class _SplashScreenState extends State<SplashScreen> {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const LiveTranslation(),
+                        _getImage();
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Row(
+                              children: const [
+                                Icon(
+                                  Icons.close,
+                                  color: Colors.red,
+                                ),
+                                SizedBox(
+                                  width: 15,
+                                ),
+                                Text("Sorry, an error occured")
+                              ],
+                            ),
                           ),
                         );
+                        //Navigator.push(
+                        //  context,
+                        //  MaterialPageRoute(
+                        //    builder: (context) => const LiveTranslation(),
+                        //  ),
+                        //);
                       },
                       child: Container(
                         padding: const EdgeInsets.symmetric(
